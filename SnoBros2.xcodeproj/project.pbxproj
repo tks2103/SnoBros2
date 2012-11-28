@@ -14,6 +14,7 @@
 		A37E594216652BC90061E425 /* UnitCollider.m in Sources */ = {isa = PBXBuildFile; fileRef = A37E594116652BC90061E425 /* UnitCollider.m */; };
 		A37E59451665314C0061E425 /* Float.m in Sources */ = {isa = PBXBuildFile; fileRef = A37E59441665314C0061E425 /* Float.m */; };
 		A37E595C166550320061E425 /* SelectionSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = A37E595B166550320061E425 /* SelectionSystem.m */; };
+		87E4198D166680F700336F3A /* ParticleSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E4198C166680F700336F3A /* ParticleSystem.m */; };
 		A3BD0C981642EC8B007AEB08 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BD0C971642EC8B007AEB08 /* UIKit.framework */; };
 		A3BD0C9A1642EC8B007AEB08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BD0C991642EC8B007AEB08 /* Foundation.framework */; };
 		A3BD0C9C1642EC8B007AEB08 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BD0C9B1642EC8B007AEB08 /* CoreGraphics.framework */; };
@@ -90,6 +91,8 @@
 		A37E59441665314C0061E425 /* Float.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Float.m; sourceTree = "<group>"; };
 		A37E595A166550320061E425 /* SelectionSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionSystem.h; sourceTree = "<group>"; };
 		A37E595B166550320061E425 /* SelectionSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionSystem.m; sourceTree = "<group>"; };
+		87E4198B166680F700336F3A /* ParticleSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleSystem.h; sourceTree = "<group>"; };
+		87E4198C166680F700336F3A /* ParticleSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticleSystem.m; sourceTree = "<group>"; };
 		A3BD0C931642EC8B007AEB08 /* SnoBros2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnoBros2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3BD0C971642EC8B007AEB08 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A3BD0C991642EC8B007AEB08 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -347,6 +350,8 @@
 				A3F8B05A166465A700334E9E /* Transform.m */,
 				A37E594016652BC90061E425 /* UnitCollider.h */,
 				A37E594116652BC90061E425 /* UnitCollider.m */,
+				87E4198B166680F700336F3A /* ParticleSystem.h */,
+				87E4198C166680F700336F3A /* ParticleSystem.m */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -549,6 +554,7 @@
 				A37E594216652BC90061E425 /* UnitCollider.m in Sources */,
 				A37E59451665314C0061E425 /* Float.m in Sources */,
 				A37E595C166550320061E425 /* SelectionSystem.m in Sources */,
+				87E4198D166680F700336F3A /* ParticleSystem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
