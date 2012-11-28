@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8787EC19166523A0000C07E1 /* SpriteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8787EC18166523A0000C07E1 /* SpriteManager.m */; };
 		8787EC1B16652664000C07E1 /* sprites.json in Resources */ = {isa = PBXBuildFile; fileRef = 8787EC1A16652664000C07E1 /* sprites.json */; };
+		878F50B7166697E2008D1475 /* BaseParticleEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 878F50B6166697E2008D1475 /* BaseParticleEmitter.m */; };
+		878F50BD16669884008D1475 /* ParticleGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 878F50BC16669884008D1475 /* ParticleGenerator.m */; };
 		87E4195F16652E7600336F3A /* SceneNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E4195E16652E7600336F3A /* SceneNode.m */; };
 		87E41981166677DE00336F3A /* healthgradient2.png in Resources */ = {isa = PBXBuildFile; fileRef = 87E41980166677DE00336F3A /* healthgradient2.png */; };
 		A37E594216652BC90061E425 /* UnitCollider.m in Sources */ = {isa = PBXBuildFile; fileRef = A37E594116652BC90061E425 /* UnitCollider.m */; };
@@ -82,6 +84,10 @@
 		8787EC17166523A0000C07E1 /* SpriteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpriteManager.h; path = Managers/SpriteManager.h; sourceTree = "<group>"; };
 		8787EC18166523A0000C07E1 /* SpriteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpriteManager.m; path = Managers/SpriteManager.m; sourceTree = "<group>"; };
 		8787EC1A16652664000C07E1 /* sprites.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sprites.json; sourceTree = "<group>"; };
+		878F50B5166697E2008D1475 /* BaseParticleEmitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseParticleEmitter.h; path = Particles/BaseParticleEmitter.h; sourceTree = "<group>"; };
+		878F50B6166697E2008D1475 /* BaseParticleEmitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseParticleEmitter.m; path = Particles/BaseParticleEmitter.m; sourceTree = "<group>"; };
+		878F50BB16669884008D1475 /* ParticleGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticleGenerator.h; path = Particles/ParticleGenerator.h; sourceTree = "<group>"; };
+		878F50BC16669884008D1475 /* ParticleGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParticleGenerator.m; path = Particles/ParticleGenerator.m; sourceTree = "<group>"; };
 		87E4195D16652E7600336F3A /* SceneNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneNode.h; sourceTree = "<group>"; };
 		87E4195E16652E7600336F3A /* SceneNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneNode.m; sourceTree = "<group>"; };
 		87E41980166677DE00336F3A /* healthgradient2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = healthgradient2.png; sourceTree = "<group>"; };
@@ -212,9 +218,21 @@
 			name = Managers;
 			sourceTree = "<group>";
 		};
+		878F50B416669736008D1475 /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				878F50B5166697E2008D1475 /* BaseParticleEmitter.h */,
+				878F50B6166697E2008D1475 /* BaseParticleEmitter.m */,
+				878F50BB16669884008D1475 /* ParticleGenerator.h */,
+				878F50BC16669884008D1475 /* ParticleGenerator.m */,
+			);
+			name = Particles;
+			sourceTree = "<group>";
+		};
 		87E49DEF16515A8200202CFB /* SnoBros2 */ = {
 			isa = PBXGroup;
 			children = (
+				878F50B416669736008D1475 /* Particles */,
 				A3F8B06C166465A700334E9E /* Systems */,
 				A3F8B044166465A700334E9E /* Components */,
 				A3F8B03B166465A700334E9E /* Behaviors */,
@@ -555,6 +573,8 @@
 				A37E59451665314C0061E425 /* Float.m in Sources */,
 				A37E595C166550320061E425 /* SelectionSystem.m in Sources */,
 				87E4198D166680F700336F3A /* ParticleSystem.m in Sources */,
+				878F50B7166697E2008D1475 /* BaseParticleEmitter.m in Sources */,
+				878F50BD16669884008D1475 /* ParticleGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
