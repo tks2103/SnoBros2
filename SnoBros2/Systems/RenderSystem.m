@@ -117,7 +117,6 @@
 
 
 - (void)generateBaseEffectWithSceneNode:(SceneNode *)node {
-  //GLKBaseEffect *effect = [[GLKBaseEffect alloc] init];
   Sprite *sprite = [spriteManager_ getSpriteWithRef:node.spriteName];
 
   effect_.texture2d0.envMode = node.GLKTextureEnvMode;

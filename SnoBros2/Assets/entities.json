@@ -258,7 +258,7 @@
       "ParticleSystem": {
         "Type": "ParticleSystem",
         "EmissionTimer": 10,
-        "ParticlesEmitted": 500,
+        "ParticlesEmitted": 5000,
         "StandardDeviation": 0.5
       }
     }

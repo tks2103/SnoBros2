@@ -45,11 +45,9 @@
     void (^callback)(Entity *) = ^(Entity *particle){
       Transform  *partTransform   = [particle getComponentByString:@"Transform"];
       Physics    *partPhysics     = [particle getComponentByString:@"Physics"];
-      //Particle   *partParticle    = [particle getComponentByString:@"Particle"];
       
       partTransform.position  = transform.position;
       partTransform.previousPosition = transform.position;
-      //NSLog(@"Posx: %f, Posy: %f", transform.position.x, transform.position.y);
       partPhysics.velocity    = GLKVector2Make((double)arc4random() / UINT32_MAX * 1.5 - 0.75,
                                                (double)arc4random() / UINT32_MAX * 1.5 - 0.75);
     };

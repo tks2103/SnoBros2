@@ -14,10 +14,10 @@
 
 @implementation Health
 
-@synthesize health    = health_;
-@synthesize maxHealth = maxHealth_;
-@synthesize visible   = visible_;
-@synthesize spriteName = spriteName_;
+@synthesize health      = health_;
+@synthesize maxHealth   = maxHealth_;
+@synthesize visible     = visible_;
+@synthesize spriteName  = spriteName_;
 
 - (id)initWithEntity:(Entity *)entity {
   self = [super initWithEntity:entity];

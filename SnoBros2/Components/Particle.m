@@ -54,14 +54,25 @@
 
 - (void)update {
   timelived_ += 1/60.f;
-  if ( (int)ceil(GLKVector4Distance(color_, targetColor_)) != 0) {
-    GLKVector4 heading = GLKVector4Subtract(targetColor_, color_);
-    GLKVector4 unitHeading = GLKVector4Normalize(heading);
-    GLKVector4 displacement = GLKVector4DivideScalar(unitHeading, 100);
-    [self translateColor:displacement];
-  }
   if (timelived_ > lifetime_) {
     [self destroy];
+  }
+  float q = GLKVector4Distance(color_, targetColor_);
+  int p = ceil(GLKVector4Distance(color_, targetColor_));
+  if ( GLKVector4Distance(color_, targetColor_) > 0.01) {
+    GLKVector4 heading = GLKVector4Subtract(targetColor_, color_);
+    GLKVector4 unitHeading = GLKVector4Normalize(heading);
+    GLKVector4 displacement = GLKVector4DivideScalar(unitHeading, 50);
+    [self translateColor:displacement];
+  } else {
+    /*targetColor_ = GLKVector4Make(color_.r + 0.1,
+                                  color_.g + (float)arc4random() / UINT32_MAX / 10 - 0.05,
+                                  color_.b + (float)arc4random() / UINT32_MAX / 10 - 0.05,
+                                  0.4);
+    targetColor_ = GLKVector4Make((float)arc4random() / UINT32_MAX,
+                                  (float)arc4random() / UINT32_MAX,
+                                  (float)arc4random() / UINT32_MAX,
+                                  (float)arc4random() / UINT32_MAX);*/
   }
 }
 
@@ -72,7 +83,6 @@
   [[NSNotificationCenter defaultCenter] postNotificationName:@"destroyEntity"
                                                       object:self
                                                     userInfo:destroyData];
-  //NSLog(@"TIMED OUT!");
 }
 
 
