@@ -28,14 +28,22 @@
   self = [self initWithEntity:entity];
   if (self) {
     lifetime_ = [data[@"Lifetime"] floatValue];
-    color_        = GLKVector4Make([data[@"StartR"] floatValue],
-                                   [data[@"StartG"] floatValue],
-                                   [data[@"StartB"] floatValue],
-                                   [data[@"StartA"] floatValue]);
-    targetColor_  = GLKVector4Make([data[@"EndR"] floatValue],
-                                   [data[@"EndG"] floatValue],
-                                   [data[@"EndB"] floatValue],
-                                   [data[@"EndA"] floatValue]);
+    NSScanner *scanner;
+    unsigned int rgbVal;
+    
+    scanner = [NSScanner scannerWithString:data[@"StartColor"]];
+    [scanner scanHexInt:&rgbVal];
+    color_        = GLKVector4Make(((float) ((rgbVal & 0xFF000000) >> 24))/255.f,
+                                   ((float) ((rgbVal & 0xFF0000  ) >> 16))/255.f,
+                                   ((float) ((rgbVal & 0xFF00    ) >>  8))/255.f,
+                                    (float)  (rgbVal & 0xFF      )        /255.f);
+
+    scanner = [NSScanner scannerWithString:data[@"EndColor"]];
+    [scanner scanHexInt:&rgbVal];
+    targetColor_  = GLKVector4Make(((float) ((rgbVal & 0xFF000000) >> 24))/255.f,
+                                   ((float) ((rgbVal & 0xFF0000  ) >> 16))/255.f,
+                                   ((float) ((rgbVal & 0xFF00    ) >>  8))/255.f,
+                                    (float)  (rgbVal & 0xFF      )        /255.f);
     
     timelived_ = 0;
   }

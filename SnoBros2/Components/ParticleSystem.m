@@ -28,9 +28,10 @@
 - (id)initWithEntity:(Entity *)entity dictionary:(NSDictionary *)data {
   self = [self initWithEntity:entity];
   if (self) {
-    particleGenerator_  = [[ParticleGenerator alloc] initWithEmissionTimer:10
-                                                         particlesEmitted:1000
-                                                        standardDeviation:.3];
+    particleGenerator_  = [[ParticleGenerator alloc]
+                           initWithEmissionTimer:[data[@"EmissionTimer"] floatValue]
+                                particlesEmitted:[data[@"ParticlesEmitted"] floatValue]
+                               standardDeviation:[data[@"StandardDeviation"] floatValue]];
   }
   return self;
 }

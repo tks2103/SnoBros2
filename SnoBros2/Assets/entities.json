@@ -191,7 +191,10 @@
         "Damage": 10
       },
       "ParticleSystem": {
-        "Type": "ParticleSystem"
+        "Type": "ParticleSystem",
+        "EmissionTimer": 10,
+        "ParticlesEmitted": 1000,
+        "StandardDeviation": 0.1
       }
     }
   },
@@ -253,7 +256,10 @@
         "Name": "Team Edward"
       },
       "ParticleSystem": {
-        "Type": "ParticleSystem"
+        "Type": "ParticleSystem",
+        "EmissionTimer": 10,
+        "ParticlesEmitted": 500,
+        "StandardDeviation": 0.5
       }
     }
   },
@@ -333,17 +339,11 @@
       "Particle": {
         "Type": "Particle",
         "Lifetime": 2,
-        "StartR": "0.7",
-        "StartG": "0.3",
-        "StartB": "0.1",
-        "StartA": "0.7",
-        "EndR": "0.1",
-        "EndG": "0.2",
-        "EndB": "0.2",
-        "EndA": "0.2"
+        "StartColor": "0xBB2211BB",
+        "EndColor": "0x11222222"
       },
       "Behavior": {
-        "Type": "ParticleBehavior"
+        "Type": "Sphere"
       },
       "SceneGraph": {
         "Type": "SceneGraph",

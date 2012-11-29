@@ -85,7 +85,7 @@
 
 
 - (void)addTwoFingerTapEvent:(UITapGestureRecognizer *)gr {
-  [selectionSystem_ deselectAll];
+  //[selectionSystem_ deselectAll];
   NSArray *units   = [entityManager_ findByTeamName:@"Team Edward"];
   NSArray *targets = [entityManager_ findByTeamName:@"Team Jacob"];
 
