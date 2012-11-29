@@ -18,6 +18,9 @@
   float particlesEmitted_;
   float particleEmissionRate_;
   float standardDeviation_;
+  float totalTime_;
+  float particlesGenerated_;
+  float accumulator_;
 }
 
 - (id)initWithEmissionTimer:(float)targetEmissionTimer

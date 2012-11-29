@@ -28,6 +28,8 @@ NSArray *COMPONENT_LOAD_ORDER = nil;
                                                      @"Attack",
                                                      @"UnitCollider",
                                                      @"Projectile",
+                                                     @"ParticleSystem",
+                                                     @"Particle",
                                                      nil];
   }
 }

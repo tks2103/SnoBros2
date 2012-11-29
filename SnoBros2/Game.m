@@ -41,13 +41,13 @@
     [entityManager_ loadEntityTypesFromFile:@"entities"];
     [entityManager_ buildAndAddEntity:@"Map"];
 
-    for (int i = 1; i <= 4; i++) {
+    for (int i = 1; i <= 1; i++) {
       Entity *e = [entityManager_ buildAndAddEntity:@"Unit1"];
       Transform *transform = [e getComponentByString:@"Transform"];
       transform.position = GLKVector2Make(0.f, 60.f * i);
     }
 
-    for (int i = 1; i <= 4; i++) {
+    for (int i = 1; i <= 0; i++) {
       Entity *e = [entityManager_ buildAndAddEntity:@"Unit2"];
       Transform *transform = [e getComponentByString:@"Transform"];
       transform.position = GLKVector2Make(100.f, 60.f * i);
@@ -66,23 +66,29 @@
 
 
 - (void)update:(NSTimeInterval)elapsedTime {
+  //NSLog(@"accumulator pre addition: %f Elapsed time: %f", timestepAccumulator_, elapsedTime);
   timestepAccumulator_ += elapsedTime;
-
+  totalTimeElapsed_ += elapsedTime;
+  //NSLog(@"accumulator post addtion: %f Elapsed time: %f", timestepAccumulator_, elapsedTime);
   int numSteps = MIN(timestepAccumulator_ / TIMESTEP_INTERVAL, MAX_STEPS);
+  //NSLog(@"numSteps: %d", numSteps);
   if (numSteps > 0) {
     timestepAccumulator_ -= numSteps * TIMESTEP_INTERVAL;
   }
-
+  //NSLog(@"accumulator post sub: %f numSteps * TI: %f", timestepAccumulator_, numSteps * TIMESTEP_INTERVAL);
+  //NSLog(@"interval :%f", TIMESTEP_INTERVAL);
   timestepAccumulatorRatio_ = timestepAccumulator_ / TIMESTEP_INTERVAL;
-
+  //NSLog(@"ratio: %f", timestepAccumulator_/TIMESTEP_INTERVAL);
   for (int i = 0; i < numSteps; i++) {
     [self step];
   }
+  //NSLog(@"Total Time Elapsed %f", totalTimeElapsed_);
 }
 
 
 
 - (void)step {
+  //NSLog(@"# of Entities: %d", [[entityManager_ allEntities] count]);
   for (Entity *e in [entityManager_ allEntities]) {
     [e update];
   }

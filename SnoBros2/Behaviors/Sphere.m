@@ -30,13 +30,13 @@
   Physics   *physics   = [entity_ getComponentByString:@"Physics"];
   GLKVector2 position = transform.position;
 
-  if (position.x < 0 || position.x > 480) {
+  if (position.x < -480 || position.x > 480) {
     physics.velocity =
       GLKVector2Make(-physics.velocity.x,
                       physics.velocity.y);
   }
 
-  if (transform.position.y < 0 || transform.position.y > 320) {
+  if (transform.position.y < -320 || transform.position.y > 320) {
     physics.velocity =  GLKVector2Make( physics.velocity.x,
                                        -physics.velocity.y);
   }

@@ -248,6 +248,9 @@
       "Team": {
         "Type": "Team",
         "Name": "Team Edward"
+      },
+      "ParticleSystem": {
+        "Type": "ParticleSystem"
       }
     }
   },
@@ -307,6 +310,36 @@
       "Team": {
         "Type": "Team",
         "Name": "Team Jacob"
+      }
+    }
+  },
+  {
+    "Name": "Particle",
+    "Tag":  "particle",
+    "Components": {
+      "Transform": {
+        "Type": "Transform",
+        "Scale": {
+          "X": 0.5,
+          "Y": 0.5
+        }
+      },
+      "Physics": {
+        "Type": "Physics"
+      },
+      "Particle": {
+        "Type": "Particle",
+        "Lifetime": 1
+      },
+      "Behavior": {
+        "Type": "Sphere"
+      },
+      "SceneGraph": {
+        "Type": "SceneGraph",
+        "Layer": 2,
+        "Nodes": {
+          "Name": "Snowball"
+        }
       }
     }
   }

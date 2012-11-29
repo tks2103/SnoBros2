@@ -16,7 +16,7 @@
 @class SelectionSystem;
 
 const static float TIMESTEP_INTERVAL = 1.f / 60.f;
-const static int   MAX_STEPS         = 5;
+const static int   MAX_STEPS         = 10;
 
 @interface Game : NSObject {
   EntityManager         *entityManager_;
@@ -30,6 +30,7 @@ const static int   MAX_STEPS         = 5;
   NSTimeInterval        timestepAccumulator_;
   NSTimeInterval        timestepAccumulatorRatio_;
   NSTimeInterval const  timestepInterval_;
+  NSTimeInterval        totalTimeElapsed_;
 }
 
 @property (nonatomic) Camera          *camera;

@@ -73,7 +73,7 @@
 
   direction_ = GLKVector2Normalize(GLKVector2Subtract(target_,
                                                       transform.position));
-  physics.velocity = GLKVector2MultiplyScalar(direction_, 10);
+  physics.velocity = GLKVector2MultiplyScalar(direction_, 4);
 }
 
 
@@ -83,8 +83,9 @@
   Physics   *physics    = [entity_ getComponentByString:@"Physics"];
   float      distance   = GLKVector2Distance(transform.position, target_);
 
-  if ([Float is:distance equalTo:0.f]) {
+  if ([Float is:distance lessThan:2.f]) {
     physics.velocity = GLKVector2Make(0.f, 0.f);
+    target_ = transform.position;
   } else if ([physics isMovingAwayFrom:target_]) {
     [self walkToTarget:target_];
   }
