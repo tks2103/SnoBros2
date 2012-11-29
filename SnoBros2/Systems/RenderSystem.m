@@ -17,6 +17,7 @@
 #import "SceneGraph.h"
 #import "SceneNode.h"
 #import "Health.h"
+#import "Particle.h"
 
 @implementation RenderSystem
 
@@ -27,6 +28,7 @@
     spriteManager_  = [[SpriteManager alloc] init];
     [spriteManager_ loadEntityTypesFromFile:@"sprites"];
     camera_         = camera;
+    effect_         = [[GLKBaseEffect alloc] init];
   }
   return self;
 }
@@ -45,6 +47,7 @@
   Transform   *transform  = [entity getComponentByString:@"Transform"];
   SceneGraph  *sceneGraph = [entity getComponentByString:@"SceneGraph"];
   Health      *health     = [entity getComponentByString:@"Health"];
+  Particle    *particle   = [entity getComponentByString:@"Particle"];
 
   GLKVector2  scale             = transform.scale;
   GLKVector2  position          = GLKVector2Lerp(transform.previousPosition,
@@ -59,6 +62,10 @@
 
   if (health != nil) {
     [self transformHealthBar:[sceneGraph getNodeByName:health.spriteName] withHealthComponent:health];
+  }
+  
+  if (particle != nil) {
+    [self transformParticle:[sceneGraph getNodeByName:@"Particle"] withParticleComponent:particle];
   }
 
   [sceneGraph updateRootModelViewMatrix:modelViewMatrix];
@@ -77,9 +84,9 @@
   if (node.visible == FALSE) {
     return;
   }
-  GLKBaseEffect *effect = [self generateBaseEffectWithSceneNode:node];
-  Sprite        *sprite = [spriteManager_ getSpriteWithRef:node.spriteName];
-  [effect prepareToDraw];
+  [self generateBaseEffectWithSceneNode:node];
+  Sprite *sprite = [spriteManager_ getSpriteWithRef:node.spriteName];
+  [effect_ prepareToDraw];
   [self drawSprite:sprite];
   if (node.children != nil) {
     for (SceneNode *child in node.children) {
@@ -96,19 +103,28 @@
   float ytrans = -(parentSprite.height/2.f) -5;
 
   node.modelViewMatrix = GLKMatrix4Multiply(GLKMatrix4MakeScale(percent, 1, 1),
-                                                 GLKMatrix4MakeTranslation(0, ytrans, 0));
+                                            GLKMatrix4MakeTranslation(0, ytrans, 0));
   node.visible = health.visible;
 }
 
 
 
-- (GLKBaseEffect *)generateBaseEffectWithSceneNode:(SceneNode *)node {
-  GLKBaseEffect *effect = [[GLKBaseEffect alloc] init];
+- (void)transformParticle:(SceneNode *)node withParticleComponent:(Particle *)particle {
+  node.GLKTextureEnvMode = GLKTextureEnvModeModulate;
+  node.color = particle.color;
+}
+
+
+
+- (void)generateBaseEffectWithSceneNode:(SceneNode *)node {
+  //GLKBaseEffect *effect = [[GLKBaseEffect alloc] init];
   Sprite *sprite = [spriteManager_ getSpriteWithRef:node.spriteName];
 
-  effect.texture2d0.envMode = GLKTextureEnvModeReplace;
-  effect.texture2d0.target  = GLKTextureTarget2D;
-  effect.texture2d0.name    = sprite.texture.name;
+  effect_.texture2d0.envMode = node.GLKTextureEnvMode;
+  effect_.texture2d0.target  = GLKTextureTarget2D;
+  effect_.texture2d0.name    = sprite.texture.name;
+  effect_.useConstantColor   = YES;
+  effect_.constantColor      = node.color;
 
   float left   = camera_.position.x;
   float right  = camera_.viewport.x + camera_.position.x;
@@ -117,9 +133,8 @@
   float near   = -16.f;
   float far    =  16.f;
 
-  effect.transform.projectionMatrix = GLKMatrix4MakeOrtho(left, right, bottom, top, near, far);
-  effect.transform.modelviewMatrix  = node.modelViewMatrix;
-  return effect;
+  effect_.transform.projectionMatrix = GLKMatrix4MakeOrtho(left, right, bottom, top, near, far);
+  effect_.transform.modelviewMatrix  = node.modelViewMatrix;
 }
 
 

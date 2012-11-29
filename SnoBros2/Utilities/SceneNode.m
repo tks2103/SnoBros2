@@ -10,10 +10,13 @@
 
 @implementation SceneNode
 
-@synthesize parent          = parent_;
-@synthesize children        = children_;
-@synthesize spriteName      = spriteName_;
-@synthesize modelViewMatrix = modelViewMatrix_;
+@synthesize parent            = parent_;
+@synthesize children          = children_;
+@synthesize spriteName        = spriteName_;
+@synthesize modelViewMatrix   = modelViewMatrix_;
+@synthesize GLKTextureEnvMode = GLKTextureEnvMode_;
+@synthesize color             = color_;
+
 @synthesize visible         = visible_;
 
 - (id)initWithSpriteRef:(NSString *)spriteRef {
@@ -22,6 +25,8 @@
     spriteName_  = spriteRef;
     children_   = [[NSMutableArray alloc] init];
     modelViewMatrix_ = GLKMatrix4Identity;
+    GLKTextureEnvMode_ = GLKTextureEnvModeReplace;
+    color_ = GLKVector4Make(0, 0, 0, 0);
     visible_ = TRUE;
   }
   return self;

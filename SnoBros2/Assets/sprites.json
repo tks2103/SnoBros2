@@ -10,6 +10,11 @@
     "FileName": "snowball.png"
   },
   {
+    "Name": "Particle",
+    "Tag": "Particle",
+    "FileName": "particle.png"
+  },
+  {
     "Name": "BigBlue",
     "Tag": "BigBlue",
     "FileName": "sprite2.png"

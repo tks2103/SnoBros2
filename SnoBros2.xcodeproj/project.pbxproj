@@ -11,6 +11,8 @@
 		8787EC1B16652664000C07E1 /* sprites.json in Resources */ = {isa = PBXBuildFile; fileRef = 8787EC1A16652664000C07E1 /* sprites.json */; };
 		878F50BD16669884008D1475 /* ParticleGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 878F50BC16669884008D1475 /* ParticleGenerator.m */; };
 		87923BA91666CBA3000809AC /* Particle.m in Sources */ = {isa = PBXBuildFile; fileRef = 87923BA81666CBA3000809AC /* Particle.m */; };
+		8798297C1667F4CF00C04D48 /* particle.png in Resources */ = {isa = PBXBuildFile; fileRef = 8798297B1667F4CF00C04D48 /* particle.png */; };
+		87AE05341667EE1800CC2EC7 /* ParticleBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 87AE05331667EE1800CC2EC7 /* ParticleBehavior.m */; };
 		87E4195F16652E7600336F3A /* SceneNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E4195E16652E7600336F3A /* SceneNode.m */; };
 		87E41981166677DE00336F3A /* healthgradient2.png in Resources */ = {isa = PBXBuildFile; fileRef = 87E41980166677DE00336F3A /* healthgradient2.png */; };
 		87E4198D166680F700336F3A /* ParticleSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E4198C166680F700336F3A /* ParticleSystem.m */; };
@@ -88,6 +90,9 @@
 		878F50BC16669884008D1475 /* ParticleGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParticleGenerator.m; path = Particles/ParticleGenerator.m; sourceTree = "<group>"; };
 		87923BA71666CBA3000809AC /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Particle.h; sourceTree = "<group>"; };
 		87923BA81666CBA3000809AC /* Particle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Particle.m; sourceTree = "<group>"; };
+		8798297B1667F4CF00C04D48 /* particle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = particle.png; sourceTree = "<group>"; };
+		87AE05321667EE1800CC2EC7 /* ParticleBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleBehavior.h; sourceTree = "<group>"; };
+		87AE05331667EE1800CC2EC7 /* ParticleBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticleBehavior.m; sourceTree = "<group>"; };
 		87E4195D16652E7600336F3A /* SceneNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneNode.h; sourceTree = "<group>"; };
 		87E4195E16652E7600336F3A /* SceneNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneNode.m; sourceTree = "<group>"; };
 		87E41980166677DE00336F3A /* healthgradient2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = healthgradient2.png; sourceTree = "<group>"; };
@@ -308,6 +313,7 @@
 		A3F8B02E166465A700334E9E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				8798297B1667F4CF00C04D48 /* particle.png */,
 				87E41980166677DE00336F3A /* healthgradient2.png */,
 				A3F8B02F166465A700334E9E /* Default-568h@2x.png */,
 				A3F8B030166465A700334E9E /* Default.png */,
@@ -331,6 +337,8 @@
 			children = (
 				A3F8B03C166465A700334E9E /* Behavior.h */,
 				A3F8B03D166465A700334E9E /* Behavior.m */,
+				87AE05321667EE1800CC2EC7 /* ParticleBehavior.h */,
+				87AE05331667EE1800CC2EC7 /* ParticleBehavior.m */,
 				A3F8B03E166465A700334E9E /* LeftPlayer.h */,
 				A3F8B03F166465A700334E9E /* LeftPlayer.m */,
 				A3F8B040166465A700334E9E /* Sphere.h */,
@@ -507,6 +515,7 @@
 				A3F8B098166465A700334E9E /* InfoPlist.strings in Resources */,
 				8787EC1B16652664000C07E1 /* sprites.json in Resources */,
 				87E41981166677DE00336F3A /* healthgradient2.png in Resources */,
+				8798297C1667F4CF00C04D48 /* particle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +584,7 @@
 				87E4198D166680F700336F3A /* ParticleSystem.m in Sources */,
 				878F50BD16669884008D1475 /* ParticleGenerator.m in Sources */,
 				87923BA91666CBA3000809AC /* Particle.m in Sources */,
+				87AE05341667EE1800CC2EC7 /* ParticleBehavior.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

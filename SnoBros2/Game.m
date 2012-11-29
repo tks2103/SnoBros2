@@ -47,7 +47,7 @@
       transform.position = GLKVector2Make(0.f, 60.f * i);
     }
 
-    for (int i = 1; i <= 0; i++) {
+    for (int i = 1; i <= 4; i++) {
       Entity *e = [entityManager_ buildAndAddEntity:@"Unit2"];
       Transform *transform = [e getComponentByString:@"Transform"];
       transform.position = GLKVector2Make(100.f, 60.f * i);

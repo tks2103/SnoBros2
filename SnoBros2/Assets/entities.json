@@ -189,6 +189,9 @@
       "Projectile": {
         "Type": "Projectile",
         "Damage": 10
+      },
+      "ParticleSystem": {
+        "Type": "ParticleSystem"
       }
     }
   },
@@ -203,8 +206,8 @@
           "Y": 0
         },
         "Scale": {
-          "X": 0.5,
-          "Y": 0.5
+          "X": 1,
+          "Y": 1
         }
       },
       "Physics": {
@@ -320,8 +323,8 @@
       "Transform": {
         "Type": "Transform",
         "Scale": {
-          "X": 0.5,
-          "Y": 0.5
+          "X": 2,
+          "Y": 2
         }
       },
       "Physics": {
@@ -329,16 +332,24 @@
       },
       "Particle": {
         "Type": "Particle",
-        "Lifetime": 1
+        "Lifetime": 2,
+        "StartR": "0.7",
+        "StartG": "0.3",
+        "StartB": "0.1",
+        "StartA": "0.7",
+        "EndR": "0.1",
+        "EndG": "0.2",
+        "EndB": "0.2",
+        "EndA": "0.2"
       },
       "Behavior": {
-        "Type": "Sphere"
+        "Type": "ParticleBehavior"
       },
       "SceneGraph": {
         "Type": "SceneGraph",
         "Layer": 2,
         "Nodes": {
-          "Name": "Snowball"
+          "Name": "Particle"
         }
       }
     }

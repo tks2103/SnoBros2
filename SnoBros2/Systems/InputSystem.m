@@ -95,7 +95,7 @@
       Entity  *target  = targets[arc4random() % targets.count];
       Health  *health  = [unit getComponentByString:@"Health"];
 
-      [health damage:20];
+      [health damage:2];
 
       [attack fireAt:target];
     }

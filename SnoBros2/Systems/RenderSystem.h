@@ -17,11 +17,13 @@
 @class SceneGraph;
 @class SceneNode;
 @class Health;
+@class Particle;
 
 @interface RenderSystem : NSObject {
   EntityManager *entityManager_;
   SpriteManager *spriteManager_;
   Camera        *camera_;
+  GLKBaseEffect *effect_;
 }
 
 - (id)initWithEntityManager:(EntityManager *)entityManager camera:(Camera *)camera;
@@ -32,8 +34,9 @@
 - (void)renderSceneNode:(SceneNode *)node;
 
 - (void)transformHealthBar:(SceneNode *)node withHealthComponent:(Health *)health;
+- (void)transformParticle:(SceneNode *)node withParticleComponent:(Particle *)particle;
 
-- (GLKBaseEffect *)generateBaseEffectWithSceneNode:(SceneNode *)node;
+- (void)generateBaseEffectWithSceneNode:(SceneNode *)node;
 - (void)drawSprite:(Sprite *)sprite;
 
 @end

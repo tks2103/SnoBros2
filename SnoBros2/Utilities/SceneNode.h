@@ -16,6 +16,9 @@
   NSMutableArray  *children_;
   NSString        *spriteName_;
   GLKMatrix4      modelViewMatrix_;
+  GLint           GLKTextureEnvMode_;
+  GLKVector4      color_;
+  
   BOOL            visible_;
 }
 
@@ -23,6 +26,9 @@
 @property (nonatomic) NSMutableArray  *children;
 @property (nonatomic) NSString        *spriteName;
 @property (nonatomic) GLKMatrix4      modelViewMatrix;
+@property (nonatomic) GLint           GLKTextureEnvMode;
+@property (nonatomic) GLKVector4      color;
+
 @property (nonatomic) BOOL            visible;
 
 - (id)initWithSpriteRef:(NSString *)spriteRef;

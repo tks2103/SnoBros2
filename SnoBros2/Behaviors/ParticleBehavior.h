@@ -1,16 +1,14 @@
 //
-//  Sphere.h
+//  ParticleBehavior.h
 //  SnoBros2
 //
-//  Created by Chad Jablonski on 11/12/12.
+//  Created by Tanoy Sinha on 11/29/12.
 //  Copyright (c) 2012 Attack Slug. All rights reserved.
 //
 
 #import "Behavior.h"
 
-@class Entity;
-
-@interface Sphere : Behavior
+@interface ParticleBehavior : Behavior
 
 - (id)initWithEntity:(Entity *)entity;
 - (id)initWithEntity:(Entity *)entity dictionary:(NSDictionary *)data;

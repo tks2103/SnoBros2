@@ -29,7 +29,7 @@
   self = [self initWithEntity:entity];
   if (self) {
     particleGenerator_  = [[ParticleGenerator alloc] initWithEmissionTimer:10
-                                                         particlesEmitted:500
+                                                         particlesEmitted:1000
                                                         standardDeviation:.3];
   }
   return self;
